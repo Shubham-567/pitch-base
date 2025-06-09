@@ -11,13 +11,13 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  experimental: {
-    ppr: "incremental",
-  },
+  // experimental: {
+  //   ppr: "incremental",
+  // },
 
-  devIndicators: {
-    position: "bottom-right",
-  },
+  // devIndicators: {
+  //   position: "bottom-right",
+  // },
 };
 
 export default nextConfig;

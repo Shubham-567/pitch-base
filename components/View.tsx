@@ -1,4 +1,3 @@
-import { sanityFetch } from "@/sanity/lib/live";
 import Ping from "./Ping";
 import { STARTUP_VIEWS_QUERY } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";

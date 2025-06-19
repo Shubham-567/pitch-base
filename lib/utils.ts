@@ -22,3 +22,7 @@ export function formatNumber(number: number) {
     return number.toString(); // Return the number as is if below 1000
   }
 }
+
+export function parseServerActionResponse<T>(response: T) {
+  return JSON.parse(JSON.stringify(response));
+}

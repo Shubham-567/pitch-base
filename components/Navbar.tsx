@@ -1,7 +1,7 @@
 import { auth, signIn, signOut } from "@/auth";
 import { getInitials } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import { BadgePlus, LogIn } from "lucide-react";
+import { BadgePlus, LogIn, LogInIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,8 +31,8 @@ const Navbar = async () => {
                   await signOut();
                 }}>
                 <button type='submit'>
-                  <span className='max-sm:hidden'>Login</span>
-                  <LogIn className='size-6 sm:hidden text-red-500' />
+                  <span className='max-sm:hidden'>Logout</span>
+                  <LogIn className='size-6 mt-1 sm:hidden text-red-500' />
                 </button>
               </form>
 
@@ -56,8 +56,9 @@ const Navbar = async () => {
 
                 await signIn("github");
               }}>
-              <button type='submit'>
-                <span className='max-sm:hidden'>LogIn</span>
+              <button type='submit' className='flex gap-1'>
+                <span>Login</span>
+                <LogIn className='sm:hidden size-6' />
               </button>
             </form>
           )}

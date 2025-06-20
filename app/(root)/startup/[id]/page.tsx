@@ -29,19 +29,9 @@ const startup = async ({ params }: { params: Promise<{ id: string }> }) => {
     }),
   ]);
 
-  // Sequential Fetching:-
-
-  // const post = await client.fetch(STARTUP_BY_ID_QUERY, { id });
-
-  // const { select: editorPosts } = await client.fetch(PLAYLIST_BY_SLUG_QUERY, {
-  //   slug: "editor-picks",
-  // });
-
   if (!post) return notFound();
 
   const parsedContent = await marked(post?.pitch || "");
-
-  // console.log(JSON.stringify(post, null, 2));
 
   return (
     <>
@@ -52,10 +42,12 @@ const startup = async ({ params }: { params: Promise<{ id: string }> }) => {
       </section>
 
       <section className='section_container'>
-        <img
-          src={post?.image}
+        <Image
+          src={post?.image || "https://placehold.co/800x450"}
           alt='thumbnail'
           className='rounded-xl w-full h-auto'
+          width={800}
+          height={450}
         />
 
         <div className='space-y-5 mt-10 max-w-4xl mx-auto'>
@@ -114,7 +106,6 @@ const startup = async ({ params }: { params: Promise<{ id: string }> }) => {
       </section>
     </>
   );
-  1;
 };
 
 export default startup;

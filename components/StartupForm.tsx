@@ -11,6 +11,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { createPitch } from "@/lib/actions";
+import { FormState } from "sanity";
 
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -19,15 +20,16 @@ const StartupForm = () => {
 
   const router = useRouter();
 
-  const handleFormSubmit = async (prevState: any, formData: FormData) => {
+  const handleFormSubmit = async (prevState: FormState, formData: FormData) => {
     try {
       const formValues = {
-        title: formData.get("title") as String,
-        description: formData.get("description") as String,
-        category: formData.get("category") as String,
-        link: formData.get("link") as String,
+        title: formData.get("title") as string,
+        description: formData.get("description") as string,
+        category: formData.get("category") as string,
+        link: formData.get("link") as string,
         pitch,
       };
+      console.log(formValues);
 
       await formSchema.parseAsync(formValues);
 
@@ -63,7 +65,7 @@ const StartupForm = () => {
     }
   };
 
-  const [state, formAction, isPending] = useActionState(handleFormSubmit, {
+  const [, formAction, isPending] = useActionState(handleFormSubmit, {
     error: "",
     status: "INITIAL",
   });

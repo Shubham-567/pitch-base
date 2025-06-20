@@ -1,7 +1,7 @@
 import { auth, signIn, signOut } from "@/auth";
 import { getInitials } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import { BadgePlus, LogIn, LogInIcon } from "lucide-react";
+import { BadgePlus, LogIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -39,12 +39,12 @@ const Navbar = async () => {
               <Link href={`/user/${session?.id}`}>
                 <Avatar>
                   <AvatarImage
-                    src={session?.user?.image!}
-                    alt={session?.user?.name || ""}
+                    src={session?.user?.image || ""}
+                    alt={session?.user?.name || "Profile picture"}
                     className='size-10 rounded-full'
                   />
                   <AvatarFallback className='text-16-semibold p-2 rounded-full ring-2'>
-                    {getInitials(session?.user?.name!)}
+                    {getInitials(session?.user?.name || "AV")}
                   </AvatarFallback>
                 </Avatar>
               </Link>

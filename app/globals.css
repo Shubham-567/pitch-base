@@ -67,6 +67,10 @@ button {
   cursor: pointer;
 }
 
+#sentry-feedback {
+  --inset: auto auto 0 0 !important;
+}
+
 @utility pattern {
   background-image: linear-gradient(
     to right,

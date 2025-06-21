@@ -14,12 +14,10 @@ if (process.env.NODE_ENV === "production") {
       Sentry.replayIntegration(),
 
       // Report a bug widget
-
-      // Sentry.feedbackIntegration({
-      //   // Additional SDK configuration goes in here, for example:
-      //   colorScheme: "system",
-      //   showBranding: false,
-      // }),
+      Sentry.feedbackIntegration({
+        // Additional SDK configuration goes in here, for example:
+        colorScheme: "system",
+      }),
     ],
 
     // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.

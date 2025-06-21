@@ -48,7 +48,7 @@ const Navbar = async () => {
                 </Button>
 
                 <button type='submit' className='sm:hidden'>
-                  <LogIn className='size-6 text-red-500' />
+                  <LogIn className='size-6 text-red-500 mt-1' />
                 </button>
               </form>
 

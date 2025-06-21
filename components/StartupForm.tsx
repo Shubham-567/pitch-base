@@ -18,20 +18,23 @@ const StartupForm = () => {
 
   const [pitch, setPitch] = useState("");
 
+  const [formValues, setFormValues] = useState({
+    title: "",
+    description: "",
+    category: "",
+    link: "",
+  });
+
   const router = useRouter();
 
   const handleFormSubmit = async (prevState: FormState, formData: FormData) => {
     try {
-      const formValues = {
-        title: formData.get("title") as string,
-        description: formData.get("description") as string,
-        category: formData.get("category") as string,
-        link: formData.get("link") as string,
+      const formValuesToValidate = {
+        ...formValues,
         pitch,
       };
-      console.log(formValues);
 
-      await formSchema.parseAsync(formValues);
+      await formSchema.parseAsync(formValuesToValidate);
 
       const result = await createPitch(prevState, formData, pitch);
 
@@ -39,6 +42,10 @@ const StartupForm = () => {
         toast.success("Success", {
           description: "Your startup pitch has been created successfully",
         });
+
+        // clear form
+        setFormValues({ title: "", description: "", category: "", link: "" });
+        setPitch("");
 
         router.push(`/startup/${result._id}`);
       }
@@ -80,6 +87,10 @@ const StartupForm = () => {
         <Input
           id='title'
           name='title'
+          value={formValues.title}
+          onChange={(e) =>
+            setFormValues({ ...formValues, title: e.target.value })
+          }
           className='startup-form_input'
           required
           placeholder='Startup Title'
@@ -96,6 +107,10 @@ const StartupForm = () => {
         <Textarea
           id='description'
           name='description'
+          value={formValues.description}
+          onChange={(e) =>
+            setFormValues({ ...formValues, description: e.target.value })
+          }
           className='startup-form_textarea'
           required
           placeholder='Startup Description'
@@ -114,6 +129,10 @@ const StartupForm = () => {
         <Input
           id='category'
           name='category'
+          value={formValues.category}
+          onChange={(e) =>
+            setFormValues({ ...formValues, category: e.target.value })
+          }
           className='startup-form_input'
           required
           placeholder='Startup Category (Tech, Health, Education...)'
@@ -132,6 +151,10 @@ const StartupForm = () => {
         <Input
           id='link'
           name='link'
+          value={formValues.link}
+          onChange={(e) =>
+            setFormValues({ ...formValues, link: e.target.value })
+          }
           className='startup-form_input'
           required
           placeholder='Startup Image Url'

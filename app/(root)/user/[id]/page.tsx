@@ -27,8 +27,11 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           </div>
 
           <Image
-            src={user.image}
-            alt={user.name}
+            src={
+              user.image ||
+              "https://pascale.com.au/wp-content/uploads/2022/04/avatar-placeholder-300x300-1.gif"
+            }
+            alt={user.name || "Profile pic"}
             width={220}
             height={220}
             priority={false}

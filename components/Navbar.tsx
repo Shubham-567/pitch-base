@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { BadgePlus, LogIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 const Navbar = async () => {
   const session = await auth();
@@ -20,9 +21,17 @@ const Navbar = async () => {
         <div className='flex items-center gap-5 text-black'>
           {session && session.user ? (
             <>
-              <Link href='/startup/create'>
-                <span className='max-sm:hidden'>Create</span>
-                <BadgePlus className='size-6 sm:hidden' />
+              <Button variant='default' className='max-sm:hidden'>
+                <Link
+                  href='/startup/create'
+                  className='flex gap-1 items-center'>
+                  <span>Create</span>
+                  <BadgePlus className='size-6' />
+                </Link>
+              </Button>
+
+              <Link href='/startup/create' className='sm:hidden'>
+                <BadgePlus className='size-6' />
               </Link>
 
               <form
@@ -30,9 +39,16 @@ const Navbar = async () => {
                   "use server";
                   await signOut();
                 }}>
-                <button type='submit'>
-                  <span className='max-sm:hidden'>Logout</span>
-                  <LogIn className='size-6 mt-1 sm:hidden text-red-500' />
+                <Button
+                  type='submit'
+                  variant='outline'
+                  className='flex gap-1 items-center max-sm:hidden'>
+                  <span>Logout</span>
+                  <LogIn className='size-6' />
+                </Button>
+
+                <button type='submit' className='sm:hidden'>
+                  <LogIn className='size-6 text-red-500' />
                 </button>
               </form>
 
@@ -56,10 +72,10 @@ const Navbar = async () => {
 
                 await signIn("github");
               }}>
-              <button type='submit' className='flex gap-1'>
+              <Button type='submit' className='flex gap-1'>
                 <span>Login</span>
-                <LogIn className='sm:hidden size-6' />
-              </button>
+                <LogIn className='size-6' />
+              </Button>
             </form>
           )}
         </div>

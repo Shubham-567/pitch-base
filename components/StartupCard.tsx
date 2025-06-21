@@ -44,7 +44,10 @@ const StartupCard = ({ post }: { post: StartupCardType }) => {
           </div>
           <Link href={`/user/${author?._id}`}>
             <Image
-              src={author?.image || "https://placehold.co/48x48"}
+              src={
+                author?.image ||
+                "https://pascale.com.au/wp-content/uploads/2022/04/avatar-placeholder-300x300-1.gif"
+              }
               alt={author?.name || "Profile picture"}
               width={48}
               height={48}
@@ -56,13 +59,15 @@ const StartupCard = ({ post }: { post: StartupCardType }) => {
         <Link href={`/startup/${_id}`}>
           <p className='startup-card_desc'>{description}</p>
 
-          <Image
-            src={image || "https://placehold.co/250x200"}
-            alt='placeholder'
-            className='startup-card_img'
-            width={250}
-            height={164}
-          />
+          <div className='relative w-full h-[144px] rounded-[10px] overflow-hidden'>
+            <Image
+              src={image || "https://placehold.co/250x200"}
+              alt='placeholder'
+              className='object-cover'
+              fill
+              sizes='(max-width: 768px) 100vw, 33vw'
+            />
+          </div>
         </Link>
 
         <div className='flex-between gap-3 mt-5'>

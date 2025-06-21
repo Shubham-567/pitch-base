@@ -56,7 +56,10 @@ const startup = async ({ params }: { params: Promise<{ id: string }> }) => {
               href={`/user/${post.author?._id}`}
               className='flex gap-2 items-center mb-3'>
               <Image
-                src={post.author.image}
+                src={
+                  post.author.image ||
+                  "https://pascale.com.au/wp-content/uploads/2022/04/avatar-placeholder-300x300-1.gif"
+                }
                 alt='avatar'
                 height={64}
                 width={64}

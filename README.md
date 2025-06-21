@@ -27,7 +27,7 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/yc-directory.git
+   git clone https://github.com/Shubham-567/yc_directory.git
    cd yc-directory
    ```
 

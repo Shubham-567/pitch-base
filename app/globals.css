@@ -5,18 +5,18 @@
 
 :root {
   /* Color Variables */
-  --color-primary-100: #ffe8f0;
-  --color-primary: #ee2b69;
-  --color-secondary: #fbe843;
+  --color-primary-100: #d8d1fa;
+  --color-primary: #696cff;
+  --color-secondary: #ffa500;
+  --color-accent: #e043fa;
 
-  --color-black-100: #333333;
-  --color-black-200: #141413;
-  --color-black-300: #7d8087;
+  --color-black-100: #4a4a4a;
+  --color-black-200: #1e1e1e;
+  --color-black-300: #9ca0af;
   --color-black: #000000;
 
-  --color-white-100: #f7f7f7;
+  --color-white-100: #f5f7fa;
   --color-white: #ffffff;
-
   /* Radius */
   --radius: 0.5rem;
 
@@ -24,8 +24,8 @@
   --font-sans: "Work Sans", sans-serif;
 
   /* Background and foreground */
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f7ff;
+  --foreground: #1a1a1f;
 }
 
 @theme inline {
@@ -34,6 +34,7 @@
   --color-primary-100: var(--color-primary-100);
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
 
   --color-black-100: var(--color-black-100);
   --color-black-200: var(--color-black-200);
@@ -51,7 +52,7 @@
 
   --shadow-100: 2px 2px 0px 0px rgb(0, 0, 0);
   --shadow-200: 2px 2px 0px 2px rgb(0, 0, 0);
-  --shadow-300: 2px 2px 0px 2px rgb(238, 43, 105);
+  --shadow-300: 2px 2px 0px 2px rgb(105, 108, 255);
 
   /* Breakpoints (custom screens) */
   --breakpoint-xs: 475px;
@@ -85,7 +86,7 @@ button {
 }
 
 @utility tag-tri {
-  @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
+  @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-white before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-white after:border-l-[10px] after:border-l-transparent;
 }
 
 @layer utilities {
@@ -130,18 +131,18 @@ button {
   }
 
   .tag {
-    @apply bg-secondary px-6 py-3 font-bold rounded-sm uppercase relative tag-tri;
+    @apply text-white bg-secondary px-6 py-3 font-bold rounded-sm uppercase relative tag-tri;
   }
 
   .heading {
-    @apply uppercase bg-black px-6 py-3 font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5 mx-auto;
+    @apply uppercase bg-black px-6 py-3 font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5 mx-auto rounded-xl;
   }
 
   .sub-heading {
     @apply font-medium text-[20px] text-white max-w-2xl text-center break-words;
   }
 
-  .pink_container {
+  .heading_container {
     @apply w-full bg-primary min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
   }
 
@@ -185,7 +186,7 @@ button {
   }
 
   .profile_image {
-    @apply rounded-full object-cover border-[3px] border-black;
+    @apply rounded-full object-cover border-[3px] border-black bg-black-300;
   }
 
   /* idea details */

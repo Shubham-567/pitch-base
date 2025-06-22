@@ -1,12 +1,14 @@
-# YC Directory
+# PitchBase
 
-YC Directory is a platform for startup enthusiasts to pitch their ideas, connect with fellow entrepreneurs, submit startup concepts, vote on others' pitches, and gain visibility through virtual competitions.
+**PitchBase** is a platform for startup enthusiasts to pitch ideas, connect with fellow entrepreneurs, submit startup concepts, and gain visibility through virtual competitions.
+
+**Live Demo**: [https://pitch-base.vercel.app/](https://pitch-base.vercel.app/)
 
 ## Features
 
 - Pitch your startup idea
-- Browse and vote on other startup pitches
-- Participate in virtual competitions
+- Browse and discover other pitches
+- Sign in with GitHub, build your profile, and share your startup
 - Connect with like-minded entrepreneurs
 
 ## Tech Stack
@@ -19,16 +21,17 @@ This project is built with the following technologies:
 - **Tailwind CSS 4.1**
 - **ShadCN UI**
 - **Sanity (Headless CMS)**
+- **Sentry** for error tracking and monitoring
 
 ## Getting Started
 
-To run this project locally, follow these steps:
+To run this project locally:
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Shubham-567/yc_directory.git
-   cd yc-directory
+   git clone https://github.com/Shubham-567/pitch-base.git
+   cd pitch-base
    ```
 
 2. Install dependencies:
@@ -66,4 +69,4 @@ This project was built as part of a learning experience to explore Next.js 15 an
 
 ## License
 
-This project is intended for learning and demonstration purposes. Refer to the original tutorial for licensing details.
+MIT © Shubham Patil

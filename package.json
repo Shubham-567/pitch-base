@@ -1,5 +1,7 @@
 {
-  "name": "yc_directory",
+  "name": "pitch-base",
+  "description": "PitchBase – A platform to pitch and discover startup ideas",
+  "author": "Shubham",
   "version": "0.1.0",
   "private": true,
   "scripts": {

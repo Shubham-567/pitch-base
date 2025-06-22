@@ -9,7 +9,7 @@ const page = () => {
 
   return (
     <>
-      <div className='pink_container !min-h-[230px]'>
+      <div className='heading_container !min-h-[230px]'>
         <h1 className='heading'>Submit your startup</h1>
       </div>
 

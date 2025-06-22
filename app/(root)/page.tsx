@@ -18,7 +18,7 @@ const Home = async ({
 
   return (
     <>
-      <section className='pink_container'>
+      <section className='heading_container'>
         <h1 className='heading'>
           Pitch your startup, <br />
           Connect with Entrepreneurs

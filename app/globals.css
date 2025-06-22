@@ -234,7 +234,7 @@ button {
   /* startup form */
 
   .startup-form {
-    @apply max-w-2xl mx-auto bg-white my-10 space-y-8 px-6;
+    @apply max-w-2xl mx-auto rounded-xl my-10 space-y-8 px-6;
   }
 
   .startup-form_label {
@@ -242,11 +242,11 @@ button {
   }
 
   .startup-form_input {
-    @apply border-[3px] border-black px-5 py-7 text-[18px] text-black font-semibold rounded-full mt-3 placeholder:text-black-300;
+    @apply border-[3px] border-black px-5 py-7 text-[18px] text-black font-semibold rounded-full mt-3 placeholder:text-black-300 bg-white shadow-2xl;
   }
 
   .startup-form_textarea {
-    @apply border-[3px] border-black p-5 text-[18px] text-black font-semibold rounded-[20px] mt-3 placeholder:text-black-300;
+    @apply border-[3px] border-black p-5 text-[18px] text-black font-semibold rounded-[20px] mt-3 placeholder:text-black-300 bg-white;
   }
 
   .startup-form_error {

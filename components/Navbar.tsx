@@ -12,7 +12,7 @@ const Navbar = async () => {
   // console.log(session?.id);
 
   return (
-    <header className='px-6 py-3 bg-white shadow-sm font-work-sans'>
+    <header className='px-6 py-3 shadow-sm font-work-sans'>
       <nav className='flex justify-between items-center'>
         <Link href='/'>
           <Image src='/logo.png' alt='logo' width={164} height={40} />
